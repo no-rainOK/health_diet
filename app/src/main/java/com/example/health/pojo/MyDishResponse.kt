@@ -1,9 +1,7 @@
 package com.example.health.pojo
 
-class MyDishResponse {
-    data class DishResponse(
-        val code: Int,
-        val msg: String?,
-        val data: List<MyDish> // 菜品列表
-    )
-}
+data class MyDishResponse(
+    val code: Int,
+    val msg: String?,
+    val data: List<MyDish> // 菜品列表
+)

@@ -47,6 +47,8 @@
         <activity android:name=".activity.FoodDescActivity" />
         <activity android:name=".activity.AboutActivity" />
         <activity android:name=".activity.GuideActivity" />
+        <activity android:name=".activity.DishListActivity" />
+        <activity android:name=".activity.DishDetailActivity" />
     </application>
 
 </manifest>

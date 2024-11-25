@@ -45,7 +45,7 @@ class HomeMenuActivity : AppCompatActivity() {
             startActivity(Intent(this, MenuActivity::class.java))
         }
         binding.llMine.setOnClickListener {
-            startActivity(Intent(this, MineActivity::class.java))
+            startActivity(Intent(this, DishListActivity::class.java))
         }
         binding.llAbout.setOnClickListener {
             startActivity(Intent(this, AboutActivity::class.java))
