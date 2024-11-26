@@ -49,6 +49,8 @@
         <activity android:name=".activity.GuideActivity" />
         <activity android:name=".activity.DishListActivity" />
         <activity android:name=".activity.DishDetailActivity" />
+        <activity android:name=".activity.AddDishActivity" />
+        <activity android:name=".activity.DishUpdateActivity" />
     </application>
 
 </manifest>

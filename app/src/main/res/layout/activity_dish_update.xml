@@ -23,19 +23,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/main"
-            android:text="我的菜品"
+            android:text="修改菜品"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
-
         <TextView
-            android:id="@+id/tv_update"
+            android:id="@+id/btnUpdate"
             android:layout_width="54dp"
             android:layout_height="54dp"
             android:layout_gravity="end"
             android:gravity="center"
-            android:text="修改"
+            android:text="完成"
             android:textColor="@color/white"
             android:textStyle="bold" />
 
@@ -54,14 +52,20 @@
         android:paddingBottom="8dp"
         android:text="菜名："
         android:textColor="@color/white" />
-    <TextView
-        android:id="@+id/tvDishName"
+    <EditText
+        android:id="@+id/etDishName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold" />
-
+        android:background="@null"
+        android:ellipsize="end"
+        android:hint="请输入菜名"
+        android:maxLines="1"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,10 +78,20 @@
         android:paddingBottom="8dp"
         android:text="做菜过程："
         android:textColor="@color/white" />
-    <TextView
-        android:id="@+id/tvDishStep"
+
+    <EditText
+        android:id="@+id/etDishStep"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textSize="16sp" />
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:hint="请输入做菜过程"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
 </LinearLayout>
