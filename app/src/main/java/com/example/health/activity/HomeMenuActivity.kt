@@ -50,6 +50,10 @@ class HomeMenuActivity : AppCompatActivity() {
         binding.llAbout.setOnClickListener {
             startActivity(Intent(this, AboutActivity::class.java))
         }
+        binding.tvMap.setOnClickListener {
+            val intent = Intent(this, MapActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupViewPager() {
