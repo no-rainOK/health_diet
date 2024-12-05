@@ -1,13 +1,12 @@
 package com.example.health.network
 
-import com.example.health.pojo.Response
-import com.example.health.pojo.UpdateUserInfo
-import com.example.health.pojo.UpdateUserInfoResponse
-import com.example.health.pojo.UploadAvatarResponse
-import com.example.health.pojo.UserInfoResponse
-import com.example.health.pojo.UserResponse
-import com.example.health.pojo.UserLogin
-import com.example.health.pojo.UserRegister
+import com.example.health.pojo.dto.UpdateUserInfo
+import com.example.health.pojo.response.UpdateUserInfoResponse
+import com.example.health.pojo.response.UploadAvatarResponse
+import com.example.health.pojo.response.UserInfoResponse
+import com.example.health.pojo.response.UserResponse
+import com.example.health.pojo.dto.UserLogin
+import com.example.health.pojo.dto.UserRegister
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.Body

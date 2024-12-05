@@ -1,6 +1,5 @@
 package com.example.health.activity
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -8,8 +7,8 @@ import android.widget.Toast
 import com.example.health.databinding.ActivityUpdateUserInfoBinding
 import com.example.health.network.RetrofitClient
 import com.example.health.network.UserApi
-import com.example.health.pojo.UpdateUserInfo
-import com.example.health.pojo.UpdateUserInfoResponse
+import com.example.health.pojo.dto.UpdateUserInfo
+import com.example.health.pojo.response.UpdateUserInfoResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

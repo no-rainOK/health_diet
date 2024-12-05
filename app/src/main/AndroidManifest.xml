@@ -49,12 +49,6 @@
             android:name=".activity.MenuDescActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MineActivity"
-            android:exported="true" />
-        <activity
-            android:name=".activity.MineAddActivity"
-            android:exported="true" />
-        <activity
             android:name=".activity.MenuUpdateActivity"
             android:exported="true" />
         <activity
@@ -75,6 +69,16 @@
         <activity android:name=".activity.DishUpdateActivity" />
         <activity android:name=".activity.UserInfoActivity" />
         <activity android:name=".activity.UpdateUserInfoActivity"/>
+        <activity
+            android:name=".test.testInsertMenuActivity"
+            android:exported="true">
+            <!-- 其他配置 -->
+        </activity>
+        <activity
+            android:name=".test.testInsertFoodActivity"
+            android:exported="true">
+            <!-- 其他配置 -->
+        </activity>
     </application>
 
 </manifest>

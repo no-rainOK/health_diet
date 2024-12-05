@@ -1,6 +1,7 @@
 package com.example.health.adapter
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,10 +28,20 @@ class FoodAdapter(private val context: Context, private var mDatas: List<FoodBea
         holder = view.tag as ViewHolder
 
         val foodBean = mDatas[position]
-        holder.tvTitle.text = foodBean.title
-        holder.tvNot.text = "不可匹配: ${foodBean.notmatch}"
-        holder.tvDetail.text = foodBean.desc
-        holder.iv.setImageResource(foodBean.picId)
+        holder.tvTitle.text = foodBean.name
+        holder.tvNot.text = "不可匹配: ${foodBean.taboo}"
+        holder.tvDetail.text = foodBean.intro
+
+        // 获取数据库中存储的资源 URI（例如 "android.resource://com.example.health/drawable/menu1"）
+        val imageUri = Uri.parse(foodBean.image)  // 解析 URI
+
+        // 使用 setImageURI 来加载图片
+        if (imageUri.scheme == "android.resource") {
+            holder.iv.setImageURI(imageUri)  // 设置图片
+        } else {
+            // 如果 URI 无效，可以设置默认图片
+            holder.iv.setImageResource(R.drawable.placeholder)  // 默认图片
+        }
 
         return view
     }

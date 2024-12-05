@@ -1,10 +1,13 @@
-package com.example.health.bean
+package com.example.health.test
 
+import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.health.R
-import java.util.Random
+import com.example.health.utils.MenuDataUtils
 
-
-object MenuData {
+class testInsertMenuActivity: AppCompatActivity() {
     private val food = arrayOf(
         "茨菰蒜苗炒肉片", "酸菜鱼", "大白菜炖豆腐", "咖喱烤鸡", "蒜蓉粉丝蒸虾", "茄香鸡块",
         "苦瓜炒肉丝", "拔丝地瓜", "五花肉超油豆角", "猪肉韭菜包子", "咖喱牛肉饭", "萝卜烧鲳鱼",
@@ -519,36 +522,36 @@ object MenuData {
             13、切开摆盘，即可享用。
             """.trimIndent()
     )
-    private val resId = intArrayOf(
-        R.drawable.menu1,
-        R.drawable.menu2,
-        R.drawable.menu3,
-        R.drawable.menu4,
-        R.drawable.menu5,
-        R.drawable.menu6,
-        R.drawable.menu7,
-        R.drawable.menu8,
-        R.drawable.menu9,
-        R.drawable.menu10,
-        R.drawable.menu11,
-        R.drawable.menu12,
-        R.drawable.menu13,
-        R.drawable.menu14,
-        R.drawable.bamboo,
-        R.drawable.menu16,
-        R.drawable.menu17,
-        R.drawable.menu18,
-        R.drawable.menu19,
-        R.drawable.menu20,
-        R.drawable.menu21,
-        R.drawable.menu22,
-        R.drawable.menu23,
-        R.drawable.menu24,
-        R.drawable.menu25,
-        R.drawable.menu26,
-        R.drawable.menu27,
-        R.drawable.menu28,
-        R.drawable.menu29
+    private val resId = arrayOf(
+        "android.resource://com.example.health/drawable/menu1",
+        "android.resource://com.example.health/drawable/menu2",
+        "android.resource://com.example.health/drawable/menu3",
+        "android.resource://com.example.health/drawable/menu4",
+        "android.resource://com.example.health/drawable/menu5",
+        "android.resource://com.example.health/drawable/menu6",
+        "android.resource://com.example.health/drawable/menu7",
+        "android.resource://com.example.health/drawable/menu8",
+        "android.resource://com.example.health/drawable/menu9",
+        "android.resource://com.example.health/drawable/menu10",
+        "android.resource://com.example.health/drawable/menu11",
+        "android.resource://com.example.health/drawable/menu12",
+        "android.resource://com.example.health/drawable/menu13",
+        "android.resource://com.example.health/drawable/menu14",
+        "android.resource://com.example.health/drawable/bamboo",
+        "android.resource://com.example.health/drawable/menu16",
+        "android.resource://com.example.health/drawable/menu17",
+        "android.resource://com.example.health/drawable/menu18",
+        "android.resource://com.example.health/drawable/menu19",
+        "android.resource://com.example.health/drawable/menu20",
+        "android.resource://com.example.health/drawable/menu21",
+        "android.resource://com.example.health/drawable/menu22",
+        "android.resource://com.example.health/drawable/menu23",
+        "android.resource://com.example.health/drawable/menu24",
+        "android.resource://com.example.health/drawable/menu25",
+        "android.resource://com.example.health/drawable/menu26",
+        "android.resource://com.example.health/drawable/menu27",
+        "android.resource://com.example.health/drawable/menu28",
+        "android.resource://com.example.health/drawable/menu29"
     )
     private val foodjianjie = arrayOf(
         """
@@ -673,25 +676,18 @@ object MenuData {
             """.trimIndent()
 
     )
-    val allFoodList: List<FoodBean>
-        get() {
-            val list: MutableList<FoodBean> = ArrayList()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-            for (i in food.indices) {
-                val bean = FoodBean(food[i], food1[i], foodjianjie[i], resId[i].toString())
-                list.add(bean)
-            }
-            randomList(list)
-            return list
-        }
+        // 初始化数据库工具类
+        val menuDataUtils = MenuDataUtils(this)
 
-    private fun randomList(list: MutableList<FoodBean>) {
-        val random = Random()
-        for (i in list.indices) {
-            val randomPos = random.nextInt(list.size)
-            val temp = list[i]
-            list[i] = list[randomPos]
-            list[randomPos] = temp
-        }
+        // 插入数据
+        menuDataUtils.insertMenuData(food, food1, resId, foodjianjie)
+
+        Toast.makeText(this, "菜单数据已插入数据库", Toast.LENGTH_SHORT).show()
+
+        Log.d("insert","插入成功")
     }
 }

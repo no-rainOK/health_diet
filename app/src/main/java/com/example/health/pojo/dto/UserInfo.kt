@@ -1,4 +1,4 @@
-package com.example.health.pojo
+package com.example.health.pojo.dto
 
 import com.google.gson.annotations.SerializedName
 

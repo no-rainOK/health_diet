@@ -1,4 +1,4 @@
-package com.example.health.pojo
+package com.example.health.pojo.response
 
 class DeleteDishResponse (
     val code: Int,

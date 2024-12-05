@@ -3,12 +3,11 @@ package com.example.health.activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.example.health.databinding.ActivityRegisterBinding
 import com.example.health.network.RetrofitClient
 import com.example.health.network.UserApi
-import com.example.health.pojo.UserResponse
-import com.example.health.pojo.UserRegister
+import com.example.health.pojo.response.UserResponse
+import com.example.health.pojo.dto.UserRegister
 import retrofit2.Call
 import retrofit2.Callback
 

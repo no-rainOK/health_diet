@@ -12,7 +12,6 @@ import com.baidu.mapapi.map.MapStatusUpdateFactory
 import com.baidu.mapapi.map.MapView
 import com.baidu.mapapi.map.MyLocationData
 import com.baidu.mapapi.model.LatLng
-import com.example.health.R
 import com.example.health.databinding.ActivityMapBinding
 
 class MapActivity : AppCompatActivity() {

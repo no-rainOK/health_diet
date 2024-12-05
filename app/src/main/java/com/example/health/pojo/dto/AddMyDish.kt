@@ -1,4 +1,4 @@
-package com.example.health.pojo
+package com.example.health.pojo.dto
 
 class AddMyDish (
     val userId: Int,

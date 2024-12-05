@@ -1,4 +1,4 @@
-package com.example.health.pojo
+package com.example.health.pojo.dto
 
 import android.os.Parcel
 import android.os.Parcelable

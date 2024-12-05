@@ -33,7 +33,7 @@ class MineAdapter(private val context: Context, private var mCaidanList: List<Me
         }
 
         // 绑定数据到 ViewHolder
-        holder.titleTextView.text = mCaidanList[position].title
+//        holder.titleTextView.text = mCaidanList[position].title
 
         return view
     }

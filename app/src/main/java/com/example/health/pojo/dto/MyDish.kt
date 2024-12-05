@@ -1,4 +1,4 @@
-package com.example.health.pojo
+package com.example.health.pojo.dto
 
 data class MyDish(
     val id: Int, //菜品id

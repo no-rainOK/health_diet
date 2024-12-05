@@ -6,15 +6,13 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.health.databinding.ActivityLoginBinding
 import com.example.health.network.RetrofitClient
 import com.example.health.network.UserApi
-import com.example.health.pojo.UserResponse
-import com.example.health.pojo.UserLogin
-import com.example.health.activity.BaseActivity
+import com.example.health.pojo.response.UserResponse
+import com.example.health.pojo.dto.UserLogin
 import retrofit2.Call
 import retrofit2.Callback
 

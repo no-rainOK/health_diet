@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
-import androidx.appcompat.app.AppCompatActivity
 import com.example.health.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity() {

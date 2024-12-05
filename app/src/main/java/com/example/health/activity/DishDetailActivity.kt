@@ -3,7 +3,6 @@ package com.example.health.activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import com.example.health.R
 import com.example.health.databinding.ActivityDishDetailBinding
 

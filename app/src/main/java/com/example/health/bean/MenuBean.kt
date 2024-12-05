@@ -1,3 +1,11 @@
 package com.example.health.bean
 
-class MenuBean(@JvmField var id: Int, @JvmField var title: String, @JvmField var content: String)
+import java.io.Serializable
+
+data class MenuBean(
+    val name: String?,
+    val step: String?,
+    val image: String?,
+    val intro: String?
+) : Serializable
+

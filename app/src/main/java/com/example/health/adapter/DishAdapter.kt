@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.health.R
-import com.example.health.pojo.MyDish
+import com.example.health.pojo.dto.MyDish
 
 class DishAdapter(
     private val dishList: List<MyDish>,

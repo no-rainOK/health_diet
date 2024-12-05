@@ -1,12 +1,11 @@
 package com.example.health.network
 
-import com.example.health.pojo.AddDishResponse
-import com.example.health.pojo.AddMyDish
-import com.example.health.pojo.DeleteDishResponse
-import com.example.health.pojo.MyDishResponse
-import com.example.health.pojo.Response
-import com.example.health.pojo.UpdateDishResponse
-import com.example.health.pojo.UpdateMyDish
+import com.example.health.pojo.response.AddDishResponse
+import com.example.health.pojo.dto.AddMyDish
+import com.example.health.pojo.response.DeleteDishResponse
+import com.example.health.pojo.response.MyDishResponse
+import com.example.health.pojo.response.UpdateDishResponse
+import com.example.health.pojo.dto.UpdateMyDish
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.DELETE

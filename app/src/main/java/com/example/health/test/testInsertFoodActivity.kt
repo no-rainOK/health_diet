@@ -1,9 +1,14 @@
-package com.example.health.bean
+package com.example.health.test
 
+import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.health.R
-import java.util.Random
+import com.example.health.utils.FoodDataUtils
+import com.example.health.utils.MenuDataUtils
 
-object FoodData {
+class testInsertFoodActivity:AppCompatActivity() {
     private val food = arrayOf(
         "猪肉", "猪肝", "猪血", "羊肉", "牛肉", "牛肝", "鹅肉", "兔肉", "狗肉",
         "鸭肉", "鸡肉", "驴肉", "鸡蛋", "鲤鱼", "黄鱼", "虾", "虾皮", "螃蟹", "蛤", "鳖肉",
@@ -51,20 +56,46 @@ object FoodData {
         "胡萝卜 核桃 啤酒 红薯",
         "海鲜"
     )
-    private val resId = intArrayOf(
-        R.drawable.zhu, R.drawable.pigliver, R.drawable.pigblood,
-        R.drawable.lamb, R.drawable.beef, R.drawable.beefliver,
-        R.drawable.goose, R.drawable.rabbit, R.drawable.dog,
-        R.drawable.duck, R.drawable.chicken, R.drawable.donkey,
-        R.drawable.egg, R.drawable.carp, R.drawable.yellowfish,
-        R.drawable.shrimp, R.drawable.shrimp2, R.drawable.crab,
-        R.drawable.clam, R.drawable.turtle, R.drawable.riversnail,
-        R.drawable.garlic, R.drawable.onion, R.drawable.radish,
-        R.drawable.celery, R.drawable.leek, R.drawable.spinach,
-        R.drawable.lettuce, R.drawable.bamboo, R.drawable.tomato,
-        R.drawable.foreignonion, R.drawable.vinegar, R.drawable.tea,
-        R.drawable.beanmilk, R.drawable.brownsuger, R.drawable.honey,
-        R.drawable.milk, R.drawable.whitespirit, R.drawable.beer
+    private val resId = arrayOf(
+        "android.resource://com.example.health/drawable/zhu",
+        "android.resource://com.example.health/drawable/pigliver",
+        "android.resource://com.example.health/drawable/pigblood",
+        "android.resource://com.example.health/drawable/lamb",
+        "android.resource://com.example.health/drawable/beef",
+        "android.resource://com.example.health/drawable/beefliver",
+        "android.resource://com.example.health/drawable/goose",
+        "android.resource://com.example.health/drawable/rabbit",
+        "android.resource://com.example.health/drawable/dog",
+        "android.resource://com.example.health/drawable/duck",
+        "android.resource://com.example.health/drawable/chicken",
+        "android.resource://com.example.health/drawable/donkey",
+        "android.resource://com.example.health/drawable/egg",
+        "android.resource://com.example.health/drawable/carp",
+        "android.resource://com.example.health/drawable/yellowfish",
+        "android.resource://com.example.health/drawable/shrimp",
+        "android.resource://com.example.health/drawable/shrimp2",
+        "android.resource://com.example.health/drawable/crab",
+        "android.resource://com.example.health/drawable/clam",
+        "android.resource://com.example.health/drawable/turtle",
+        "android.resource://com.example.health/drawable/riversnail",
+        "android.resource://com.example.health/drawable/garlic",
+        "android.resource://com.example.health/drawable/onion",
+        "android.resource://com.example.health/drawable/radish",
+        "android.resource://com.example.health/drawable/celery",
+        "android.resource://com.example.health/drawable/leek",
+        "android.resource://com.example.health/drawable/spinach",
+        "android.resource://com.example.health/drawable/lettuce",
+        "android.resource://com.example.health/drawable/bamboo",
+        "android.resource://com.example.health/drawable/tomato",
+        "android.resource://com.example.health/drawable/foreignonion",
+        "android.resource://com.example.health/drawable/vinegar",
+        "android.resource://com.example.health/drawable/tea",
+        "android.resource://com.example.health/drawable/beanmilk",
+        "android.resource://com.example.health/drawable/brownsuger",
+        "android.resource://com.example.health/drawable/honey",
+        "android.resource://com.example.health/drawable/milk",
+        "android.resource://com.example.health/drawable/whitespirit",
+        "android.resource://com.example.health/drawable/beer"
     )
     private val foodjianjie = arrayOf(
         "猪肉是目前人们餐桌上最常见的肉类食物之一，猪瘦肉中富含铁，容易被人体吸收，能预防贫血。猪肉味甘咸，性平，有补虚、滋阴、养血、润燥的功效。",
@@ -107,27 +138,17 @@ object FoodData {
         "白酒主要由水乙醇和少量微量元素组成。夜晚服用少量的白酒，可平缓的促进血液循环，起到催眠作用。饮少量白酒可刺激胃液分泌与唾液分泌，因而起到健胃和止疼痛、利小便及驱虫的作用。白酒味苦、甘、辛，性温，有毒，入心、肝、肺、胃经。",
         "啤酒营养丰富，其中含有丰富的氨基酸，是原料大麦含有的蛋白质经过酶的作用分解而产生的。且啤酒中还含有多种维生素。适量饮啤酒有强心、利尿、健胃的功效。"
     )
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-    val allFoodList: List<FoodBean>
-        get() {
-            //存储到对象，在将对象存储到集合中
-            val list: MutableList<FoodBean> = ArrayList()
-            for (i in food.indices) {
-                val bean = FoodBean(food[i], food1[i], foodjianjie[i], resId[i].toString())
-                list.add(bean)
-            }
-            //随机排列list
-            randomList(list)
-            return list
-        }
+        // 调用工具类插入数据
+        val foodDataUtils = FoodDataUtils(this)
+        foodDataUtils.insertFoodData(food, food1, resId, foodjianjie)
 
-    private fun randomList(list: MutableList<FoodBean>) {
-        val random = Random()
-        for (i in list.indices) {
-            val randomPos = random.nextInt(list.size)
-            val temp = list[i]
-            list[i] = list[randomPos]
-            list[randomPos] = temp
-        }
+        Log.d("insert","插入成功")
+
+        // 显示提示
+//        Toast.makeText(this, "食材数据已插入数据库", Toast.LENGTH_SHORT).show()
     }
 }

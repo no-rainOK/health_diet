@@ -1,6 +1,7 @@
 package com.example.health.adapter
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,9 +9,9 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.health.R
-import com.example.health.bean.FoodBean
+import com.example.health.bean.MenuBean
 
-class MenuAdapter(private val context: Context, private var mDatas: List<FoodBean>) : BaseAdapter() {
+class MenuAdapter(private val context: Context, private var mDatas: List<MenuBean>) : BaseAdapter() {
 
     override fun getCount(): Int = mDatas.size
 
@@ -31,9 +32,20 @@ class MenuAdapter(private val context: Context, private var mDatas: List<FoodBea
             holder = convertView.tag as ViewHolder
         }
 
-        val foodBean = mDatas[position]
-        holder.iv.setImageResource(foodBean.picId)
-        holder.tv.text = foodBean.title
+        val menuBean = mDatas[position]
+
+        // 获取数据库中存储的图片资源路径
+        val imageUri = Uri.parse(menuBean.image)  // 解析 URI，例如 "android.resource://com.example.health/drawable/menu1"
+
+        // 使用 setImageURI 加载图片
+        if (imageUri.scheme == "android.resource") {
+            holder.iv.setImageURI(imageUri)  // 设置图片
+        } else {
+            // 如果 URI 无效，可以设置默认图片
+            holder.iv.setImageResource(R.drawable.placeholder)  // 默认图片
+        }
+
+        holder.tv.text = menuBean.name
 
         return view
     }

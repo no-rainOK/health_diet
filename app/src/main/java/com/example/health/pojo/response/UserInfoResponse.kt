@@ -1,5 +1,6 @@
-package com.example.health.pojo
+package com.example.health.pojo.response
 
+import com.example.health.pojo.dto.UserInfo
 import com.google.gson.annotations.SerializedName
 
 data class UserInfoResponse(

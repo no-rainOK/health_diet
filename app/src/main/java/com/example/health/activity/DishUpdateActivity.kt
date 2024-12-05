@@ -2,12 +2,11 @@ package com.example.health.activity
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.example.health.databinding.ActivityDishUpdateBinding
 import com.example.health.network.DishApi
 import com.example.health.network.RetrofitClient
-import com.example.health.pojo.UpdateDishResponse
-import com.example.health.pojo.UpdateMyDish
+import com.example.health.pojo.response.UpdateDishResponse
+import com.example.health.pojo.dto.UpdateMyDish
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -1,14 +1,14 @@
 package com.example.health.activity
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.example.health.R
 import com.example.health.adapter.FoodAdapter
 import com.example.health.bean.FoodBean
-import com.example.health.bean.FoodData
+import com.example.health.sqlite.DatabaseHelper
 import com.example.health.databinding.ActivityFoodBinding
 
 class FoodActivity : BaseActivity() {
@@ -31,10 +31,12 @@ class FoodActivity : BaseActivity() {
     }
 
     private fun initView() {
-        allFoodList = FoodData.allFoodList
-        mDatas.addAll(allFoodList)
+        // 从数据库中获取数据
+        val dbHelper = DatabaseHelper(this)
+        allFoodList = dbHelper.getAllFoodData()
+        Log.d("fooddata", allFoodList.toString())
 
-        // 设置适配器
+        // 初始化适配器
         adapter = FoodAdapter(this, mDatas)
         binding.lvInfo.adapter = adapter
     }
@@ -42,7 +44,7 @@ class FoodActivity : BaseActivity() {
     private fun setupData() {
         // 初始化数据
         mDatas.clear()
-        mDatas.addAll(FoodData.allFoodList)
+        mDatas.addAll(allFoodList)
         adapter.notifyDataSetChanged()
     }
 
@@ -64,7 +66,7 @@ class FoodActivity : BaseActivity() {
                 Toast.makeText(this, "输入内容不能为空！", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            val filteredList = allFoodList.filter { it.title!!.contains(msg) }
+            val filteredList = allFoodList.filter { it.name!!.contains(msg) }
             mDatas.clear()
             mDatas.addAll(filteredList)
             adapter.notifyDataSetChanged()

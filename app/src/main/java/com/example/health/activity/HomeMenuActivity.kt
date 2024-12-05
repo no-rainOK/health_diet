@@ -8,12 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.health.R
 import com.example.health.adapter.AboutAdapter
 import com.example.health.databinding.ActivityHomeMenuBinding
-import com.example.health.activity.BaseActivity
 
 class HomeMenuActivity : BaseActivity() {
 

@@ -14,9 +14,9 @@ import com.example.health.R
 import com.example.health.databinding.ActivityUserInfoBinding
 import com.example.health.network.RetrofitClient
 import com.example.health.network.UserApi
-import com.example.health.pojo.UpdateUserInfo
-import com.example.health.pojo.UploadAvatarResponse
-import com.example.health.pojo.UserInfoResponse
+import com.example.health.pojo.dto.UpdateUserInfo
+import com.example.health.pojo.response.UploadAvatarResponse
+import com.example.health.pojo.response.UserInfoResponse
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody

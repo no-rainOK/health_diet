@@ -1,6 +1,6 @@
-package com.example.health.pojo
+package com.example.health.pojo.response
 
-import java.util.Objects
+import com.example.health.pojo.dto.UserData
 
 data class UserResponse(
     val code: Int,     // 用于判断请求是否成功

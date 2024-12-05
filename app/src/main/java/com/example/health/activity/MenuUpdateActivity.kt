@@ -1,11 +1,8 @@
 package com.example.health.activity
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.example.health.bean.MenuBean
 import com.example.health.databinding.ActivityMineUpdateBinding
-import com.example.health.sqlite.MenuBusiness
 
 class MenuUpdateActivity : BaseActivity() {
 
@@ -30,15 +27,15 @@ class MenuUpdateActivity : BaseActivity() {
         }
 
         // 更新按钮点击事件
-        binding.tvUpdate.setOnClickListener {
-            val updatedMenu = MenuBean(
-                id,
-                binding.etTitle.text.toString(),
-                binding.etContent.text.toString()
-            )
-            MenuBusiness.updateOne(updatedMenu)
-            setResult(RESULT_OK)
-            finish()
-        }
+//        binding.tvUpdate.setOnClickListener {
+//            val updatedMenu = MenuBean(
+//                id,
+//                binding.etTitle.text.toString(),
+//                binding.etContent.text.toString()
+//            )
+//            MenuBusiness.updateOne(updatedMenu)
+//            setResult(RESULT_OK)
+//            finish()
+//        }
     }
 }
