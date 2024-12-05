@@ -56,9 +56,11 @@ class LoginActivity : BaseActivity() {
                                 return
                             }
 
-                            // 保存用户 ID 到 SharedPreferences
+                            // 获取 SharedPreferences 并更新用户 ID
                             val sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
-                            sharedPref.edit().putInt("user_id", userId).apply()
+                            val editor = sharedPref.edit()
+                            editor.putInt("user_id", userId)  // 更新用户 ID
+                            editor.apply()  // 保存更新
 
                             // 跳转到主界面
                             Toast.makeText(this@LoginActivity, loginResponse.msg, Toast.LENGTH_SHORT).show()

@@ -108,8 +108,10 @@ class UserInfoActivity : BaseActivity() {
         val file = File(getRealPathFromURI(uri))
         val requestFile = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), file)
         val body = MultipartBody.Part.createFormData("file", file.name, requestFile)
+        val sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        val userId = sharedPref.getInt("user_id", -1)
 
-        userApi.uploadAvatar(1, body).enqueue(object : Callback<UploadAvatarResponse> {
+        userApi.uploadAvatar(userId, body).enqueue(object : Callback<UploadAvatarResponse> {
             override fun onResponse(call: Call<UploadAvatarResponse>, response: Response<UploadAvatarResponse>) {
                 if (response.isSuccessful) {
                     Toast.makeText(this@UserInfoActivity, "头像上传成功", Toast.LENGTH_SHORT).show()
