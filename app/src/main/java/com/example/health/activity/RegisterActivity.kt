@@ -12,7 +12,7 @@ import com.example.health.pojo.UserRegister
 import retrofit2.Call
 import retrofit2.Callback
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterActivity : BaseActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private val userApi: UserApi = RetrofitClient.instance.create(UserApi::class.java)

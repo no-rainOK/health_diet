@@ -73,6 +73,8 @@
         <activity android:name=".activity.DishDetailActivity" />
         <activity android:name=".activity.AddDishActivity" />
         <activity android:name=".activity.DishUpdateActivity" />
+        <activity android:name=".activity.UserInfoActivity" />
+        <activity android:name=".activity.UpdateUserInfoActivity"/>
     </application>
 
 </manifest>

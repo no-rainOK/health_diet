@@ -14,10 +14,11 @@ import com.example.health.network.RetrofitClient
 import com.example.health.network.UserApi
 import com.example.health.pojo.UserResponse
 import com.example.health.pojo.UserLogin
+import com.example.health.activity.BaseActivity
 import retrofit2.Call
 import retrofit2.Callback
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private val userApi: UserApi = RetrofitClient.instance.create(UserApi::class.java)

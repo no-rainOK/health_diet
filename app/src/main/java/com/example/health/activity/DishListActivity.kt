@@ -18,11 +18,12 @@ import com.example.health.network.RetrofitClient
 import com.example.health.pojo.DeleteDishResponse
 import com.example.health.pojo.MyDish
 import com.example.health.pojo.MyDishResponse
+import com.example.health.activity.BaseActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DishListActivity : AppCompatActivity() {
+class DishListActivity : BaseActivity() {
 
     private lateinit var binding: ActivityDishListBinding
     private lateinit var adapter: DishAdapter

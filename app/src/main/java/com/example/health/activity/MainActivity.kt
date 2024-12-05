@@ -8,7 +8,7 @@ import android.os.Message
 import androidx.appcompat.app.AppCompatActivity
 import com.example.health.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var time = 3

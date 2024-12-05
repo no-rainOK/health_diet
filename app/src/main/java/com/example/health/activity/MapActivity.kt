@@ -26,6 +26,7 @@ class MapActivity : AppCompatActivity() {
     // 是否是第一次定位
     private var isFirstLocate = true
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMapBinding.inflate(layoutInflater)
@@ -34,11 +35,10 @@ class MapActivity : AppCompatActivity() {
         // 获取地图控件引用
         mMapView = binding.mapView
 
-
         // 得到地图
         mBaiduMap = mMapView!!.map
         // 开启定位图层
-        mBaiduMap?.setMyLocationEnabled(true)
+        mBaiduMap?.isMyLocationEnabled = true
 
         // 定位初始化
         mLocationClient = LocationClient(this)
@@ -56,11 +56,38 @@ class MapActivity : AppCompatActivity() {
         // 设置locationClientOption
         mLocationClient?.locOption = option
 
-        // 注册LocationListener监听器
-        val myLocationListener = MyLocationListener()
-        mLocationClient?.registerLocationListener(myLocationListener)
+        // 设置定位监听器
+        mLocationClient?.registerLocationListener(object : BDAbstractLocationListener() {
+            override fun onReceiveLocation(bdLocation: BDLocation?) {
+                if (bdLocation == null) return
 
-        // 开启定位
+                // 获取当前定位信息
+                val latitude = bdLocation.latitude // 纬度
+                val longitude = bdLocation.longitude // 经度
+                val address = bdLocation.address // 地址信息
+                val locationDescribe = bdLocation.locationDescribe // 描述信息
+
+                // 显示地址信息
+                mTextView?.text = "当前地址: $address"
+
+                // 如果是第一次定位，移动地图至用户当前位置
+                if (isFirstLocate) {
+                    val currentLatLng = LatLng(latitude, longitude)
+                    val update = MapStatusUpdateFactory.newLatLngZoom(currentLatLng, 15f)
+                    mBaiduMap?.animateMapStatus(update)
+                    isFirstLocate = false
+                }
+
+                // 更新当前位置数据
+                val locData = MyLocationData.Builder()
+                    .latitude(latitude)
+                    .longitude(longitude)
+                    .build()
+                mBaiduMap?.setMyLocationData(locData)
+            }
+        })
+
+        // 启动定位
         mLocationClient?.start()
     }
 

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.health.bean.FoodBean
 import com.example.health.databinding.ActivityMenuDescBinding
 
-class MenuDescActivity : AppCompatActivity() {
+class MenuDescActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMenuDescBinding
 

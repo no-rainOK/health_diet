@@ -11,7 +11,7 @@ import com.example.health.bean.MenuBean
 import com.example.health.databinding.ActivityMineBinding
 import com.example.health.sqlite.MenuBusiness
 
-class MineActivity : AppCompatActivity() {
+class MineActivity : BaseActivity() {
 
     companion object {
         private const val REQUEST_CODE_UPDATE_MINE = 1

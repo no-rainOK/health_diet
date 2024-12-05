@@ -7,7 +7,7 @@ import com.example.health.bean.MenuBean
 import com.example.health.databinding.ActivityMineUpdateBinding
 import com.example.health.sqlite.MenuBusiness
 
-class MenuUpdateActivity : AppCompatActivity() {
+class MenuUpdateActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMineUpdateBinding
 

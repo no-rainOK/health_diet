@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.health.R
 import com.example.health.databinding.ActivityDishDetailBinding
 
-class DishDetailActivity : AppCompatActivity() {
+class DishDetailActivity : BaseActivity() {
 
     private lateinit var binding: ActivityDishDetailBinding
 

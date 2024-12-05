@@ -13,7 +13,7 @@ import com.example.health.R
 import com.example.health.adapter.GuideAdapter
 import com.example.health.databinding.ActivityGuideBinding
 
-class GuideActivity : AppCompatActivity() {
+class GuideActivity : BaseActivity() {
 
     private lateinit var binding: ActivityGuideBinding
     private val viewList = mutableListOf<View>() // ViewPager的数据源

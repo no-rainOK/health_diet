@@ -14,7 +14,7 @@ import com.example.health.R
 import com.example.health.adapter.AboutAdapter
 import com.example.health.databinding.ActivityAboutBinding
 
-class AboutActivity : AppCompatActivity() {
+class AboutActivity : BaseActivity() {
 
     private lateinit var binding: ActivityAboutBinding
     private val viewList = mutableListOf<View>() // ViewPager的数据源

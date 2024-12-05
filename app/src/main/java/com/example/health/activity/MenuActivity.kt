@@ -11,7 +11,7 @@ import com.example.health.adapter.MenuAdapter
 import com.example.health.bean.FoodBean
 import com.example.health.bean.MenuData
 
-class MenuActivity : AppCompatActivity() {
+class MenuActivity : BaseActivity() {
     private var gv: GridView? = null
     private var mDatas: List<FoodBean>? = null
     private var adapter: MenuAdapter? = null

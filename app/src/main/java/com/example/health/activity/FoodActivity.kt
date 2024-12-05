@@ -11,7 +11,7 @@ import com.example.health.bean.FoodBean
 import com.example.health.bean.FoodData
 import com.example.health.databinding.ActivityFoodBinding
 
-class FoodActivity : AppCompatActivity() {
+class FoodActivity : BaseActivity() {
 
     private lateinit var binding: ActivityFoodBinding
     private lateinit var adapter: FoodAdapter

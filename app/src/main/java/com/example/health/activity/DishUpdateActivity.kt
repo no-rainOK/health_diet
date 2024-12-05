@@ -12,7 +12,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DishUpdateActivity : AppCompatActivity() {
+class DishUpdateActivity : BaseActivity() {
 
     private lateinit var binding: ActivityDishUpdateBinding
 

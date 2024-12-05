@@ -13,8 +13,9 @@ import androidx.viewpager.widget.ViewPager
 import com.example.health.R
 import com.example.health.adapter.AboutAdapter
 import com.example.health.databinding.ActivityHomeMenuBinding
+import com.example.health.activity.BaseActivity
 
-class HomeMenuActivity : AppCompatActivity() {
+class HomeMenuActivity : BaseActivity() {
 
     private lateinit var binding: ActivityHomeMenuBinding
     private val viewList = mutableListOf<View>() // ViewPager 数据源
@@ -49,6 +50,9 @@ class HomeMenuActivity : AppCompatActivity() {
         }
         binding.llAbout.setOnClickListener {
             startActivity(Intent(this, AboutActivity::class.java))
+        }
+        binding.llMe.setOnClickListener {
+            startActivity(Intent(this, UserInfoActivity::class.java))
         }
         binding.tvMap.setOnClickListener {
             val intent = Intent(this, MapActivity::class.java)
