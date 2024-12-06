@@ -15,7 +15,7 @@ import com.example.health.databinding.ActivityUserInfoBinding
 import com.example.health.network.RetrofitClient
 import com.example.health.network.UserApi
 import com.example.health.pojo.dto.UpdateUserInfo
-import com.example.health.pojo.response.UploadAvatarResponse
+import com.example.health.pojo.response.UploadResponse
 import com.example.health.pojo.response.UserInfoResponse
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -111,8 +111,8 @@ class UserInfoActivity : BaseActivity() {
         val sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
         val userId = sharedPref.getInt("user_id", -1)
 
-        userApi.uploadAvatar(userId, body).enqueue(object : Callback<UploadAvatarResponse> {
-            override fun onResponse(call: Call<UploadAvatarResponse>, response: Response<UploadAvatarResponse>) {
+        userApi.uploadAvatar(userId, body).enqueue(object : Callback<UploadResponse> {
+            override fun onResponse(call: Call<UploadResponse>, response: Response<UploadResponse>) {
                 if (response.isSuccessful) {
                     Toast.makeText(this@UserInfoActivity, "头像上传成功", Toast.LENGTH_SHORT).show()
                     // Refresh user info after avatar update
@@ -124,7 +124,7 @@ class UserInfoActivity : BaseActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<UploadAvatarResponse>, t: Throwable) {
+            override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
                 Toast.makeText(this@UserInfoActivity, "头像上传失败", Toast.LENGTH_SHORT).show()
             }
         })

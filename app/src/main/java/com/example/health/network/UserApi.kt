@@ -2,7 +2,7 @@ package com.example.health.network
 
 import com.example.health.pojo.dto.UpdateUserInfo
 import com.example.health.pojo.response.UpdateUserInfoResponse
-import com.example.health.pojo.response.UploadAvatarResponse
+import com.example.health.pojo.response.UploadResponse
 import com.example.health.pojo.response.UserInfoResponse
 import com.example.health.pojo.response.UserResponse
 import com.example.health.pojo.dto.UserLogin
@@ -33,7 +33,7 @@ interface UserApi {
 
     @Multipart
     @POST("user/upload/{id}")
-    fun uploadAvatar(@Path("id") id: Int, @Part file: MultipartBody.Part): Call<UploadAvatarResponse>
+    fun uploadAvatar(@Path("id") id: Int, @Part file: MultipartBody.Part): Call<UploadResponse>
 
     @PUT("user/info")
     fun updateUserInfo(@Body updateUserInfo: UpdateUserInfo): Call<UpdateUserInfoResponse>

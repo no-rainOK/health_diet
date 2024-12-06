@@ -72,6 +72,7 @@ class DishListActivity : BaseActivity() {
             // 单击事件：跳转到菜品详情
             val intent = Intent(this, DishDetailActivity::class.java)
             intent.putExtra("id", dish.id)
+            intent.putExtra("image", dish.image) // 传递图片 URL
             intent.putExtra("name", dish.name)
             intent.putExtra("step", dish.step)
             startActivity(intent)
@@ -81,15 +82,11 @@ class DishListActivity : BaseActivity() {
         })
         binding.recyclerView.adapter = adapter
 
-
         // 发起网络请求，获取菜品列表
         fetchDishes(userId)
     }
 
-    /**
-     * 从服务器获取菜品列表
-     * @param userId 用户 ID
-     */
+    // 从服务器获取菜品列表
     private fun fetchDishes(userId: Int) {
         val api = RetrofitClient.instance.create(DishApi::class.java)
         api.getDishesByUserId(userId).enqueue(object : Callback<MyDishResponse> {
@@ -111,7 +108,7 @@ class DishListActivity : BaseActivity() {
         })
     }
 
-
+    // 删除菜品的确认对话框
     private fun showDeleteConfirmationDialog(dish: MyDish) {
         AlertDialog.Builder(this)
             .setTitle("删除菜品")
@@ -123,7 +120,7 @@ class DishListActivity : BaseActivity() {
             .show()
     }
 
-
+    // 删除菜品
     private fun deleteDish(dishId: Int) {
         val api = RetrofitClient.instance.create(DishApi::class.java)
         api.deleteDish(dishId).enqueue(object : Callback<DeleteDishResponse> {
@@ -144,5 +141,4 @@ class DishListActivity : BaseActivity() {
             }
         })
     }
-
 }
