@@ -25,6 +25,11 @@ class UpdateUserInfoActivity : BaseActivity() {
         binding = ActivityUpdateUserInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // 返回按钮
+        binding.ivBack.setOnClickListener {
+            finish()
+        }
+
         // 获取传递过来的用户信息
         val userInfo = intent.getParcelableExtra<UpdateUserInfo>("userInfo")
         Log.d("UpdateUserInfoActivity", "UserInfo: $userInfo")  // 打印获取到的 userInfo

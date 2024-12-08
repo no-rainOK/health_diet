@@ -2,8 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@color/main">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="个人中心"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
 
     <!-- 头像展示区域 -->
     <ImageView
@@ -15,21 +39,22 @@
         android:layout_marginBottom="16dp"
         android:scaleType="centerCrop" />
 
-    <!-- 修改头像按钮 -->
+    <!-- 上传头像按钮 -->
     <Button
         android:id="@+id/uploadAvatarButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="上传头像"
+        android:textColor="@color/white"
+        android:background="@color/main"
         android:onClick="onUploadAvatarClicked" />
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="1dp"
-        android:gravity="center_vertical">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center_vertical"
+        android:layout_height="52dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,12 +76,11 @@
     </LinearLayout>
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="1dp"
-        android:gravity="center_vertical">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center_vertical"
+        android:layout_height="52dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -78,12 +102,11 @@
     </LinearLayout>
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="1dp"
-        android:gravity="center_vertical">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center_vertical"
+        android:layout_height="52dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -104,12 +127,11 @@
 
     </LinearLayout>
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="1dp"
-        android:gravity="center_vertical">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center_vertical"
+        android:layout_height="52dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -130,48 +152,14 @@
 
     </LinearLayout>
 
-    <!-- 用户名 -->
-<!--    <TextView-->
-<!--        android:id="@+id/userNameTextView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="用户名: zhangsan"-->
-<!--        android:textSize="18sp"-->
-<!--        android:layout_marginTop="16dp" />-->
-
-    <!-- 用户性别 -->
-<!--    <TextView-->
-<!--        android:id="@+id/userSexTextView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="性别: 男"-->
-<!--        android:textSize="18sp"-->
-<!--        android:layout_marginTop="8dp" />-->
-
-    <!-- 用户邮箱 -->
-<!--    <TextView-->
-<!--        android:id="@+id/userEmailTextView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="邮箱: zilin0183@gmail.com"-->
-<!--        android:textSize="18sp"-->
-<!--        android:layout_marginTop="8dp" />-->
-
-    <!-- 用户简介 -->
-<!--    <TextView-->
-<!--        android:id="@+id/userIntroductionTextView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="简介: "-->
-<!--        android:textSize="18sp"-->
-<!--        android:layout_marginTop="8dp" />-->
-
-    <!-- 修改用户信息按钮 -->
     <Button
         android:id="@+id/editUserInfoButton"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:background="@color/main"
         android:text="修改信息"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
         android:onClick="onEditUserInfoClicked"
         android:layout_marginTop="16dp" />
 

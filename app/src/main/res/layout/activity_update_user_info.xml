@@ -2,14 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <!-- 用户名输入框 -->
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="54dp"
+        android:background="@color/main">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="修改信息"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:orientation="horizontal"
         android:padding="1dp"
         android:gravity="center_vertical">
@@ -33,9 +58,10 @@
 
     </LinearLayout>
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="52dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:orientation="horizontal"
         android:padding="1dp"
         android:gravity="center_vertical">
@@ -59,9 +85,10 @@
 
     </LinearLayout>
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="52dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:orientation="horizontal"
         android:padding="1dp"
         android:gravity="center_vertical">
@@ -85,9 +112,10 @@
 
     </LinearLayout>
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="52dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:orientation="horizontal"
         android:padding="1dp"
         android:gravity="center_vertical">
@@ -110,47 +138,16 @@
             android:singleLine="true" />
 
     </LinearLayout>
-<!--    <EditText-->
-<!--        android:id="@+id/editName"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:hint="用户名"-->
-<!--        android:textSize="18sp"-->
-<!--        android:layout_marginBottom="16dp" />-->
 
-    <!-- 性别输入框 -->
-<!--    <EditText-->
-<!--        android:id="@+id/editSex"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:hint="性别"-->
-<!--        android:textSize="18sp"-->
-<!--        android:layout_marginBottom="16dp" />-->
-
-    <!-- 邮箱输入框 -->
-<!--    <EditText-->
-<!--        android:id="@+id/editEmail"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:hint="邮箱"-->
-<!--        android:textSize="18sp"-->
-<!--        android:layout_marginBottom="16dp" />-->
-
-    <!-- 简介输入框 -->
-<!--    <EditText-->
-<!--        android:id="@+id/editIntroduction"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:hint="简介"-->
-<!--        android:textSize="18sp"-->
-<!--        android:layout_marginBottom="16dp" />-->
-
-    <!-- 保存按钮 -->
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="保存"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_background"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
         android:onClick="onSaveClicked" />
 
 </LinearLayout>

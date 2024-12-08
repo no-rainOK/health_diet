@@ -79,6 +79,8 @@ class DishUpdateActivity : BaseActivity() {
             selectedImageUri?.let {
                 uploadImageToServer(id)
             }
+
+            finish() //返回上一级
         }
 
         // 上传图片按钮点击事件

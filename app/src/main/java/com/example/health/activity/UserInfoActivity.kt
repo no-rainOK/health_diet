@@ -41,6 +41,11 @@ class UserInfoActivity : BaseActivity() {
         binding = ActivityUserInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // 返回按钮
+        binding.ivBack.setOnClickListener {
+            finish()
+        }
+
         // Get user info
         val sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
         val userId = sharedPref.getInt("user_id", -1)

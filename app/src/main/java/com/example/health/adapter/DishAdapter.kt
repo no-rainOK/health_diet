@@ -20,6 +20,7 @@ class DishAdapter(
 
     inner class DishViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.tvDishName)
+        val stepTextView: TextView = itemView.findViewById(R.id.tvDishStep)
         val imageView: ImageView = itemView.findViewById(R.id.ivDishImage) // 新增的 ImageView
         val deleteButton: Button = itemView.findViewById(R.id.btnDelete)
     }
@@ -33,6 +34,7 @@ class DishAdapter(
     override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
         val dish = dishList[position]
         holder.nameTextView.text = dish.name
+        holder.stepTextView.text = dish.step
 
         // 加载图片
         if (dish.image?.isNotEmpty() == true) {
