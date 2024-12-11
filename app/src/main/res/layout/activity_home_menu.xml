@@ -12,9 +12,9 @@
         android:layout_height="54dp"
         android:background="@color/main"
         android:gravity="center"
-        android:text="功能菜单"
+        android:text="健康食谱"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <androidx.viewpager.widget.ViewPager
@@ -35,160 +35,184 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!-- 第一行: 食物图鉴和精选菜单 -->
         <LinearLayout
-            android:id="@+id/ll_food"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@color/white"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"> <!-- 增加行间距 -->
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_home_menu_food"
-                app:tint="@color/main" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/ll_food"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:text="食物图鉴"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/white"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_home_menu_food"
+                    app:tint="@color/main" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="食物图鉴"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp" /> <!-- 增大文字尺寸 -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_menu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/white"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_home_menu_menu"
+                    app:tint="@color/main" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="精选菜单"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp" /> <!-- 增大文字尺寸 -->
+            </LinearLayout>
         </LinearLayout>
 
+        <!-- 第二行: 我的菜单和想出去吃 -->
         <LinearLayout
-            android:id="@+id/ll_menu"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="1dp"
-            android:background="@color/white"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"> <!-- 增加行间距 -->
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_home_menu_menu"
-                app:tint="@color/main" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/ll_mine"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:text="精选菜单"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/white"
+                android:padding="15dp"> <!-- 增加内边距 -->
 
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_home_menu_mine"
+                    app:tint="@color/main" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的菜单"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp" /> <!-- 增大文字尺寸 -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tv_map"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/white"
+                android:padding="10dp"> <!-- 增加内边距 -->
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_home_menu_about"
+                    app:tint="@color/main" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="想出去吃"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp" /> <!-- 增大文字尺寸 -->
+            </LinearLayout>
         </LinearLayout>
 
+        <!-- 第三行: 个人中心和关于我们 -->
         <LinearLayout
-            android:id="@+id/ll_mine"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="1dp"
-            android:background="@color/white"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"> <!-- 增加行间距 -->
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_home_menu_mine"
-                app:tint="@color/main" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/ll_me"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:text="我的菜单"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/white"
+                android:padding="10dp"> <!-- 增加内边距 -->
 
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_home_menu_menu"
+                    app:tint="@color/main" />
 
-        <LinearLayout
-            android:id="@+id/tv_map"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="1dp"
-            android:background="@color/white"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="个人中心"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp" /> <!-- 增大文字尺寸 -->
+            </LinearLayout>
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_home_menu_about"
-                app:tint="@color/main" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/ll_about"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:text="想出去吃"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/white"
+                android:padding="10dp"> <!-- 增加内边距 -->
 
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_home_menu_about"
+                    app:tint="@color/main" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="关于我们"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp" /> <!-- 增大文字尺寸 -->
+            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_me"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="1dp"
-            android:background="@color/white"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_home_menu_menu"
-                app:tint="@color/main" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:text="个人中心"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_about"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="1dp"
-            android:background="@color/white"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_home_menu_about"
-                app:tint="@color/main" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:text="关于我们"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
     </LinearLayout>
-
 </LinearLayout>
